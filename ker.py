@@ -1,15 +1,9 @@
-import os
-os.environ['KERAS_BACKEND'] = 'theano'
-
 from keras.datasets import mnist
 import matplotlib.pyplot as plt
 from keras.utils.np_utils import to_categorical
 from keras.layers import Dense
 from keras.models import Sequential
 from keras.optimizers import RMSprop
-from keras import backend as K
-import importlib as il
-import os
 
 
 dataset=mnist.load_data('mymnist.db')
@@ -29,3 +23,4 @@ model.compile(optimizer=RMSprop(), loss='categorical_crossentropy',
              metrics=['accuracy'])
 h = model.fit(trainx, trainycat, epochs=1,verbose=0)
 print(h.history['accuracy'][-1])
+
