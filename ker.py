@@ -22,5 +22,5 @@ model.add(Dense(units=10,activation='softmax'))
 model.compile(optimizer=RMSprop(), loss='categorical_crossentropy', 
              metrics=['accuracy'])
 h = model.fit(trainx, trainycat, epochs=1,verbose=0)
-print(h.history['accuracy'][-1]*100)
+print(int(h.history['accuracy'][-1]*100))
 
